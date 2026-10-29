@@ -18,7 +18,7 @@ jobs:
         with: { node-version: 20 }
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: '17' }
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v4
       - name: Prepare Capacitor Android project
         run: |
           cp android-package.json package.json
