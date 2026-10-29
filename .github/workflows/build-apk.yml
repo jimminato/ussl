@@ -27,6 +27,19 @@ jobs:
           cp index.html style.css app.js manifest.webmanifest service-worker.js icon.svg www/
           npx cap add android
           npx cap sync android
+      - name: Add Android permissions for audio and video calls
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          manifest = Path('android/app/src/main/AndroidManifest.xml')
+          source = manifest.read_text()
+          permissions = '''    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+              <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+              <uses-permission android:name="android.permission.CAMERA" />
+          '''
+          source = source.replace('    <application', permissions + '    <application', 1)
+          manifest.write_text(source)
+          PY
       - name: Build debug APK
         working-directory: android
         run: chmod +x gradlew && ./gradlew assembleDebug
