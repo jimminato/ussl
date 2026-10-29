@@ -1,0 +1,15 @@
+services:
+  ussl:
+    build: .
+    container_name: ussl
+    restart: unless-stopped
+    environment:
+      PORT: 3000
+      USSL_SECRET: ${USSL_SECRET:?Définir USSL_SECRET dans .env}
+      DATA_DIR: /data
+    volumes:
+      - ussl_data:/data
+    ports:
+      - "127.0.0.1:3000:3000"
+volumes:
+  ussl_data:

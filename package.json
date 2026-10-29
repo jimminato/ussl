@@ -1,0 +1,8 @@
+{
+  "name": "ussl-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Conversation privée pour deux personnes",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

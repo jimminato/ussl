@@ -1,0 +1,1 @@
+{"name":"ussl-android-wrapper","private":true,"scripts":{"android:init":"npx cap add android","android:sync":"npx cap sync android"},"dependencies":{"@capacitor/android":"^7.4.0","@capacitor/core":"^7.4.0"},"devDependencies":{"@capacitor/cli":"^7.4.0","typescript":"^5.8.3"}}

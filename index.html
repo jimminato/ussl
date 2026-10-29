@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f8faf8"><meta name="description" content="Une conversation privée, simple et à deux.">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <title>USSL — Conversation privée</title>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar"><div class="brand"><div class="brand-mark">u</div><div><div class="brand-name">USSL</div><div class="brand-sub">votre espace à deux</div></div></div><button id="settingsBtn" class="icon-button" aria-label="Paramètres" title="Paramètres">☰</button></header>
+  <section id="setup" class="setup-card hidden"><div class="setup-icon">✳</div><h1>Votre conversation,<br>rien qu’à deux.</h1><p>Choisissez votre nom et entrez le code privé que vous partagez avec l’autre personne.</p><form id="setupForm"><label for="nameInput">Votre prénom</label><input id="nameInput" maxlength="40" placeholder="Ex. Alex" autocomplete="name" required><label for="keyInput">Code secret partagé</label><input id="keyInput" type="password" minlength="16" placeholder="16 caractères minimum" autocomplete="off" required><button class="primary" type="submit">Ouvrir la conversation <span>→</span></button></form><div id="setupError" class="error"></div></section>
+  <section id="chat" class="chat hidden"><div class="chat-head"><div class="avatar">♥</div><div class="chat-title"><strong>Notre conversation</strong><span><i class="online-dot"></i> Privée et protégée</span></div><button id="clearBtn" class="icon-button" aria-label="Effacer le code de cet appareil" title="Changer de compte">⋯</button></div>
+    <div id="messages" class="messages"><div class="welcome"><div class="welcome-heart">♡</div><strong>Un espace à vous deux</strong><span>Envoyez votre premier message.</span></div></div>
+    <div id="attachmentPreview" class="attachment-preview hidden"></div><form id="composer" class="composer"><label class="attach-button" for="fileInput" title="Ajouter une photo, vidéo ou un fichier">＋</label><input id="fileInput" type="file" accept="image/*,video/*,*/*" hidden><textarea id="textInput" rows="1" placeholder="Écrire un message…" aria-label="Message"></textarea><button class="send-button" type="submit" aria-label="Envoyer">↑</button></form><div class="composer-note">Photos, vidéos et fichiers de moins de 10 Mo</div>
+  </section>
+  <footer>USSL <span>•</span> juste vous deux</footer>
+</main>
+<dialog id="settings"><div class="dialog-head"><strong>Paramètres</strong><button class="icon-button" id="closeSettings" aria-label="Fermer">×</button></div><label for="editName">Votre prénom</label><input id="editName" maxlength="40"><p>Le code secret reste enregistré sur cet appareil. Partagez-le uniquement avec votre interlocuteur.</p><button id="saveSettings" class="primary">Enregistrer</button><button id="logoutBtn" class="text-button">Déconnecter cet appareil</button></dialog>
+<div id="toast" class="toast" role="status"></div><script src="/app.js" defer></script>
+</body></html>
